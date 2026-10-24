@@ -4,355 +4,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#08152d">
-<meta name="description" content="Kavya Educational Clinic & Hub — Learn deeply, understand clearly. Bilingual learning for Classes 6–12 and competitive examinations.">
+<meta name="theme-color" content="#101c35">
 <title>Kavya Educational Clinic & Hub | Ocean of Knowledge</title>
 <style>
-:root {
-  --bg:#08152d;
-  --bg2:#102747;
-  --gold:#f5cb78;
-  --cyan:#83e5ee;
-  --white:#f8fbff;
-  --muted:#b9c9dd;
-  --glass:rgba(255,255,255,.075);
-  --border:rgba(255,255,255,.14);
-}
+:root{--navy:#101c35;--blue:#1c3458;--gold:#e9bd65;--cyan:#75d8e8;--paper:#fff;--bg:#f4f7fb;--ink:#19253b;--muted:#617087;--line:#e3e8f0}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
-  margin:0;background:var(--bg);color:var(--white);
-  font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;
-  line-height:1.7;overflow-x:hidden
-}
-a{color:inherit}
-header{
-  position:sticky;top:0;z-index:10;
-  background:rgba(8,21,45,.91);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border)
-}
-.nav{
-  width:min(1180px,94%);margin:auto;min-height:76px;
-  display:flex;align-items:center;justify-content:space-between;gap:15px
-}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-.logo{
-  width:48px;height:48px;border-radius:15px;
-  display:grid;place-items:center;font-size:25px;
-  color:var(--bg);font-weight:900;
-  background:linear-gradient(135deg,var(--gold),#fff0bf);
-  box-shadow:0 0 25px #f5cb7830;
-  animation:float 4s ease-in-out infinite
-}
-.brand strong{display:block;font-size:1rem;line-height:1.35}
-.brand small{color:var(--gold);font-size:.78rem}
-.links{display:flex;gap:19px;align-items:center}
-.links a{text-decoration:none;color:var(--muted);font-size:.92rem}
-.links a:hover{color:var(--gold)}
-.menu{display:none}
-.hero{
-  position:relative;isolation:isolate;overflow:hidden;
-  padding:86px 0 78px;
-  background:
-    radial-gradient(ellipse at 80% 15%,#246b8780,transparent 38%),
-    radial-gradient(ellipse at 15% 75%,#7150a34a,transparent 40%),
-    linear-gradient(145deg,#08152d,#102747 65%,#10213a)
-}
-.hero:before,.hero:after{
-  content:"";position:absolute;z-index:-1;border-radius:50%;
-  border:1px solid #83e5ee26;pointer-events:none
-}
-.hero:before{width:360px;height:360px;right:-110px;top:40px}
-.hero:after{width:230px;height:230px;right:-45px;top:105px}
+body{margin:0;font-family:system-ui,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+button,select,input{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:10;background:var(--navy);color:white;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:white;text-decoration:none}
+.logo{width:44px;height:44px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:25px;font-weight:900}
+.brand strong{display:block;line-height:1.3}
+.brand small{color:#cfdaeb;letter-spacing:2px}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav button,.outline{background:transparent;border:1px solid #ffffff50;color:white;border-radius:10px;padding:8px 11px}
 .wrap{width:min(1120px,92%);margin:auto}
-.hero-grid{
-  display:grid;grid-template-columns:1.2fr .8fr;
-  align-items:center;gap:45px
-}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  border:1px solid #f5cb7855;border-radius:50px;
-  padding:7px 14px;color:var(--gold);font-size:.88rem;
-  background:#f5cb7810
-}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);
-  box-shadow:0 0 12px var(--cyan)}
-h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.12;
-  letter-spacing:-1.5px;margin:22px 0}
-.gradient{
-  background:linear-gradient(100deg,#fff,var(--gold),var(--cyan));
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.hero p{color:var(--muted);font-size:1.06rem;max-width:650px}
-.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:27px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:12px 19px;border-radius:12px;text-decoration:none;
-  font-weight:750;transition:transform .2s,box-shadow .2s
-}
-.btn:hover{transform:translateY(-3px)}
-.primary{background:linear-gradient(120deg,var(--gold),#ffe8ad);
-  color:#14233a;box-shadow:0 8px 25px #f5cb7823}
-.secondary{border:1px solid var(--border);background:var(--glass)}
-.orbit{
-  min-height:310px;display:grid;place-items:center;position:relative
-}
-.planet{
-  width:210px;height:210px;border-radius:50%;
-  display:grid;place-items:center;text-align:center;
-  background:radial-gradient(circle at 30% 25%,#416c91,#172d50 58%,#08152d);
-  border:1px solid #83e5ee7a;
-  box-shadow:0 0 65px #83e5ee22,inset 0 0 40px #83e5ee12;
-  animation:float 5s ease-in-out infinite
-}
-.planet .symbol{font-size:3.7rem;display:block}
-.planet strong{color:var(--gold);font-size:1.15rem}
-.ring{
-  position:absolute;width:285px;height:285px;border-radius:50%;
-  border:1px dashed #83e5ee70;animation:spin 25s linear infinite
-}
-.ring:before{
-  content:"✦";position:absolute;top:20px;left:35px;
-  color:var(--gold);font-size:25px
-}
-.ring:after{
-  content:"✧";position:absolute;bottom:15px;right:30px;
-  color:var(--cyan);font-size:30px
-}
-.stats{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:13px;
-  margin-top:48px
-}
-.stat{
-  padding:17px;border:1px solid var(--border);
-  background:var(--glass);border-radius:15px;text-align:center
-}
-.stat strong{display:block;color:var(--gold);font-size:1.2rem}
-.stat span{color:var(--muted);font-size:.86rem}
-section.content{padding:70px 0}
-.section-head{text-align:center;max-width:760px;margin:0 auto 35px}
-.kicker{text-transform:uppercase;letter-spacing:2px;color:var(--cyan);
-  font-size:.77rem;font-weight:800}
-h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.25;margin:10px 0 14px}
-.section-head p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{
-  position:relative;overflow:hidden;padding:24px;border-radius:18px;
-  border:1px solid var(--border);
-  background:linear-gradient(145deg,#ffffff0c,#ffffff03);
-  transition:transform .25s,border-color .25s,background .25s
-}
-.card:hover{transform:translateY(-6px);border-color:#f5cb7870;
-  background:linear-gradient(145deg,#f5cb7812,#83e5ee08)}
-.icon{
-  width:54px;height:54px;display:grid;place-items:center;
-  font-size:27px;border-radius:15px;background:#83e5ee12;
-  border:1px solid #83e5ee2b;margin-bottom:17px
-}
-.card h3{margin:0 0 8px;font-size:1.2rem}
-.card p{color:var(--muted);font-size:.94rem}
-.card a{display:inline-block;margin-top:7px;color:var(--gold);
-  font-weight:750;text-decoration:none}
-.card a:hover{text-decoration:underline}
-.streams{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:25px}
-.pill{border:1px solid var(--border);border-radius:30px;
-  padding:8px 14px;background:var(--glass);color:var(--muted);font-size:.9rem}
-.deep{
-  border:1px solid #83e5ee35;border-radius:22px;padding:32px;
-  background:radial-gradient(ellipse at 100% 0%,#83e5ee16,transparent 45%),var(--glass)
-}
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:25px}
-.step{padding:15px;border-radius:13px;background:#ffffff08;border:1px solid var(--border)}
-.step b{display:block;color:var(--gold);font-size:1.05rem}
-.step span{font-size:.86rem;color:var(--muted)}
-.cta{
-  text-align:center;padding:40px 24px;border-radius:22px;
-  border:1px solid #f5cb7845;
-  background:radial-gradient(ellipse at 50% 0%,#f5cb781b,transparent 70%),#ffffff05
-}
-footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted)}
-.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a{color:var(--gold);text-decoration:none}
-.reveal{animation:rise .8s both}
-.delay{animation-delay:.15s}
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:820px){
- .links{display:none}
- .menu{display:inline-block;color:var(--gold);text-decoration:none;border:1px solid var(--border);
-   padding:8px 11px;border-radius:9px}
- .hero{padding:58px 0}
- .hero-grid{grid-template-columns:1fr;gap:10px}
- .orbit{min-height:280px}
- .cards{grid-template-columns:repeat(2,1fr)}
- .steps{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:520px){
- .brand strong{font-size:.85rem}
- .brand small{font-size:.7rem}
- .logo{width:42px;height:42px}
- h1{letter-spacing:-.7px}
- .cards{grid-template-columns:1fr}
- .stats{gap:8px}
- .stat{padding:12px 5px}
- .stat strong{font-size:1rem}
- .stat span{font-size:.75rem}
- .deep{padding:22px 16px}
- .steps{grid-template-columns:1fr 1fr}
-}
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
-}
+.hero{background:radial-gradient(ellipse at 85% 15%,#245b70,transparent 35%),linear-gradient(125deg,#101c35,#1c3458);color:white;padding:55px 0}
+.heroGrid{display:grid;grid-template-columns:1.4fr .6fr;gap:25px;align-items:center}
+.eyebrow{color:var(--gold);font-weight:800;letter-spacing:2px}
+h1{font-size:clamp(2.2rem,6vw,4.3rem);line-height:1.1;margin:12px 0}
+h1 span{color:var(--gold)}
+.hero p{color:#e0e8f4;max-width:680px;font-size:1.08rem}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{border:0;border-radius:11px;padding:11px 16px;font-weight:750}
+.gold{background:var(--gold);color:var(--navy)}
+.dark{background:var(--navy);color:white}
+.light{background:white;color:var(--navy)}
+.emblem{height:220px;width:220px;border:1px solid #e9bd6580;border-radius:50%;margin:auto;display:grid;place-items:center;box-shadow:0 0 50px #75d8e822;animation:float 5s ease-in-out infinite}
+.emblem div{text-align:center}.emblem b{display:block;font-size:4rem;color:var(--gold);line-height:1}
+@keyframes float{50%{transform:translateY(-8px)}}
+section{padding:38px 0}
+h2{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.2;color:var(--navy);margin:0 0 8px}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card,.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:0 10px 30px #10213e0a}
+.card h3{color:var(--navy);margin:8px 0}
+.card p{color:var(--muted);margin:5px 0 12px}
+.classnum{font-size:2rem;color:#c49436;font-weight:900}
+.pill{display:inline-block;background:#e9f5f8;color:#245e6b;border-radius:20px;padding:4px 10px;font-size:.82rem;font-weight:800}
+.notice{background:#fff6e5;border-left:4px solid var(--gold);padding:13px;border-radius:0 10px 10px 0;margin:16px 0}
+.hidden{display:none!important}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.toolbar select,.toolbar input{flex:1;min-width:160px;padding:11px;border:1px solid #d5deeb;border-radius:10px;background:white}
+.subjectGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.subject{width:100%;text-align:left;background:white;border:1px solid var(--line);border-radius:13px;padding:15px;color:var(--ink)}
+.subject:hover{border-color:var(--gold)}
+.subject b{display:block;color:var(--navy)}
+.chapterLayout{display:grid;grid-template-columns:250px 1fr;gap:15px;margin-top:22px}
+.chapterList{display:grid;gap:7px}
+.chapterBtn{padding:10px;text-align:left;background:white;border:1px solid var(--line);border-radius:9px}
+.chapterBtn.active{background:var(--navy);color:white}
+.concept{background:#f6f8fc;border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+.concept h4{margin:0 0 7px}
+.example{font-size:1.2rem;font-weight:800;color:#145e72}
+.question{padding:14px 0;border-bottom:1px solid var(--line)}
+.question p{font-weight:750;margin:0 0 8px}
+.option{display:block;border:1px solid var(--line);border-radius:9px;padding:8px 10px;margin:6px 0;cursor:pointer}
+.feedback{display:none;padding:10px;border-radius:9px;margin-top:8px}
+.feedback.show{display:block}.correct{background:#e5f6ed;color:#155c43}.incorrect{background:#fff0ef;color:#8a292f}
+.track{height:8px;background:#e5eaf1;border-radius:20px;overflow:hidden;margin:15px 0}
+.fill{height:100%;width:0;background:#219579}
+footer{background:var(--navy);color:#dce5f1;padding:28px 0;margin-top:25px}
+footer strong{color:var(--gold)}
+@media(max-width:760px){.heroGrid{grid-template-columns:1fr}.emblem{height:160px;width:160px}.grid,.subjectGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.chapterLayout{grid-template-columns:1fr}.chapterList{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){header{align-items:flex-start;padding:10px 4%}.brand strong{font-size:.83rem}.brand small{font-size:.65rem}.logo{height:36px;width:36px;font-size:20px}nav{max-width:115px}nav button{font-size:.75rem;padding:6px}.hero{padding:35px 0}.grid,.subjectGrid{grid-template-columns:1fr}section{padding:28px 0}.card,.panel{padding:15px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="nav">
-    <a class="brand" href="#home" aria-label="Kavya Educational Clinic & Hub Home">
-      <span class="logo">K</span>
-      <span><strong>Kavya Educational Clinic &amp; Hub</strong><small>✦ Ocean of Knowledge ✦</small></span>
-    </a>
-    <nav class="links" aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#classes">Classes</a>
-      <a href="#learning">Learning</a>
-      <a href="#deep-dive">Deep Dive</a>
-      <a href="#about">About</a>
-    </nav>
-    <a class="menu" href="#classes">Explore ↓</a>
-  </div>
+<a class="brand" href="#" onclick="home();return false">
+<span class="logo">K</span>
+<span><strong>Kavya Educational Clinic & Hub</strong><small>OCEAN OF KNOWLEDGE</small></span>
+</a>
+<nav>
+<button onclick="home()">Home</button>
+<button onclick="learn()">Learn / पढ़ें</button>
+<button onclick="showProgress()">Progress</button>
+</nav>
 </header>
 
-<main id="home">
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="reveal">
-        <span class="eyebrow"><span class="dot"></span> A space for curious minds</span>
-        <h1><span class="gradient">Learn deeply.</span><br>Understand clearly.</h1>
-        <p>ज्ञान केवल याद करने का नाम नहीं। प्रश्न पूछने, प्रमाण खोजने, विचार करने और दुनिया को बेहतर समझने की यात्रा है।</p>
-        <p>Learning is more than memorising. It is a journey of asking questions, examining evidence and discovering meaning.</p>
-        <div class="actions">
-          <a class="btn primary" href="#classes">अपनी कक्षा चुनें / Explore Classes ↗</a>
-          <a class="btn secondary" href="#deep-dive">Discover Deep Dive ✦</a>
-        </div>
-      </div>
-      <div class="orbit reveal delay" aria-label="Ocean of Knowledge animated emblem">
-        <div class="ring"></div>
-        <div class="planet">
-          <div><span class="symbol">✧</span><strong>ज्ञान का महासागर</strong><br><small>Ocean of Knowledge</small></div>
-        </div>
-      </div>
-    </div>
-    <div class="stats">
-      <div class="stat"><strong>Classes 6–12</strong><span>विद्यालयी शिक्षा / School Learning</span></div>
-      <div class="stat"><strong>Hindi + English</strong><span>द्विभाषी अध्ययन / Bilingual Learning</span></div>
-      <div class="stat"><strong>Learn • Explore</strong><span>समझें • खोजें / Understand • Discover</span></div>
-    </div>
-  </div>
-</section>
+<main id="homePage">
+<div class="hero">
+<div class="wrap heroGrid">
+<div>
+<div class="eyebrow">✦ A SPACE FOR CURIOUS MINDS</div>
+<h1>Learn deeply.<br><span>Understand clearly.</span></h1>
+<p>गहराई से सीखें · स्पष्टता से समझें।</p>
+<p>Learn from the foundations to real understanding—with simple explanations, everyday examples and practice in Hindi and English.</p>
+<div class="actions">
+<button class="btn gold" onclick="learn()">Start learning / सीखना शुरू करें →</button>
+<button class="btn outline" onclick="document.getElementById('vision').scrollIntoView({behavior:'smooth'})">Our mission</button>
+</div>
+</div>
+<div class="emblem"><div><b>K</b><span>OCEAN OF<br>KNOWLEDGE</span></div></div>
+</div>
+</div>
 
-<section class="content" id="classes">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Your learning journey</span>
-      <h2>अपनी सीखने की दुनिया चुनें</h2>
-      <h2 lang="en">Choose Your Learning Path</h2>
-      <p>कक्षा, विषय और अपनी रुचि के अनुसार आगे बढ़ें। विस्तृत पाठ्यक्रम चरणबद्ध रूप से जोड़ा जाएगा।</p>
-      <p>Explore by class, subject and interest. Detailed learning resources will be added systematically.</p>
-    </div>
-    <div class="cards">
-      <article class="card">
-        <div class="icon">📘</div>
-        <h3>कक्षा 6–8 / Middle School</h3>
-        <p>मूल अवधारणाएँ, जिज्ञासा, उदाहरण और मजबूत शैक्षिक आधार।</p>
-        <p>Build strong foundations through concepts, examples and curiosity.</p>
-        <a href="class-6/">कक्षा 6 खोलें / Explore Class 6 →</a>
-      </article>
-      <article class="card">
-        <div class="icon">🧭</div>
-        <h3>कक्षा 9–10 / Secondary</h3>
-        <p>विषयवार अध्ययन, अभ्यास और परीक्षा की तैयारी।</p>
-        <p>Subject learning, practice and exam preparation.</p>
-        <a href="#learning">अध्ययन सुविधाएँ / Learning features →</a>
-      </article>
-      <article class="card">
-        <div class="icon">🎓</div>
-        <h3>कक्षा 11–12 / Senior Secondary</h3>
-        <p>विज्ञान, वाणिज्य और मानविकी की स्ट्रीम के लिए योजना।</p>
-        <p>Planned learning paths for Science, Commerce and Humanities.</p>
-        <a href="#learning">स्ट्रीम देखें / Explore streams →</a>
-      </article>
-    </div>
-    <div class="streams">
-      <span class="pill">CBSE</span><span class="pill">UP Board</span>
-      <span class="pill">PCM</span><span class="pill">PCB</span>
-      <span class="pill">Commerce</span><span class="pill">Accountancy</span>
-      <span class="pill">Arts &amp; Humanities</span>
-    </div>
-  </div>
-</section>
+<section id="vision"><div class="wrap">
+<h2>Our Vision & Mission</h2>
+<p class="muted">सिर्फ कक्षा पास करना नहीं—वास्तव में सीखना।</p>
+<div class="grid">
+<article class="card"><div style="font-size:2rem">🧱</div><h3>Strong foundations</h3><p>हर पाठ से पहले जरूरी पुराने ज्ञान की जाँच। कमी मिलने पर बिना झिझक उसी स्तर से सीखने का अवसर।</p></article>
+<article class="card"><div style="font-size:2rem">💡</div><h3>Understand the why</h3><p>सरल व्याख्या, उदाहरण और सवाल—केवल रटे हुए उत्तर नहीं।</p></article>
+<article class="card"><div style="font-size:2rem">🎯</div><h3>Mastery through practice</h3><p>अभ्यास, अपनी गलती पहचानना और सीखे ज्ञान को नए सवालों में लागू करना।</p></article>
+</div>
+</div></section>
 
-<section class="content" id="learning" style="background:#ffffff04">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">Explore and understand</span>
-      <h2>सीखने के साधन / Learning Spaces</h2>
-      <p>एक ऐसी संरचना जहाँ विषयों को समझना, अभ्यास करना और अपनी सीख को दोहराना आसान हो।</p>
-    </div>
-    <div class="cards">
-      <article class="card"><div class="icon">📚</div><h3>Notes &amp; Chapters</h3><p>विषयवार नोट्स, परिभाषाएँ, उदाहरण और मुख्य तथ्य।</p><a href="class-6/">कक्षा 6 से शुरू करें →</a></article>
-      <article class="card"><div class="icon">🧠</div><h3>Quiz &amp; Practice</h3><p>ज्ञान जाँचने के लिए अभ्यास प्रश्न और उत्तरों की योजना।</p><a href="#about">हमारा उद्देश्य →</a></article>
-      <article class="card"><div class="icon">🔎</div><h3>Knowledge Library</h3><p>गहन अध्ययन, प्रमाण, विचार और विषयों के बीच संबंध।</p><a href="#deep-dive">Deep Dive देखें →</a></article>
-      <article class="card"><div class="icon">🏆</div><h3>Competitive Exams</h3><p>TET, Super TET, TGT, PGT, एक-दिवसीय परीक्षाएँ और सिविल सेवा की तैयारी हेतु नियोजित सामग्री।</p><a href="#about">तैयारी की दिशा →</a></article>
-      <article class="card"><div class="icon">🌐</div><h3>Hindi + English</h3><p>दोनों भाषाओं में सरल, स्पष्ट और उपयोगी अध्ययन।</p><a href="class-6/">द्विभाषी पेज देखें →</a></article>
-      <article class="card"><div class="icon">🗓️</div><h3>Latest Information</h3><p>2026 और आगे की अद्यतन जानकारी के लिए अलग खंड की योजना।</p><a href="#about">हमारी प्रतिबद्धता →</a></article>
-    </div>
-  </div>
-</section>
-
-<section class="content" id="deep-dive">
-  <div class="wrap">
-    <div class="deep">
-      <span class="kicker">Beyond the obvious</span>
-      <h2>Deep Dive — गहराई में उतरें</h2>
-      <p>सिर्फ उत्तर जानना नहीं—यह समझना कि उत्तर सही क्यों है, प्रमाण क्या हैं और कौन-से प्रश्न अभी बाकी हैं।</p>
-      <p>Go beyond the obvious. Investigate evidence, compare explanations and discover overlooked meanings.</p>
-      <div class="steps">
-        <div class="step"><b>01 · Observe</b><span>ध्यान से देखें</span></div>
-        <div class="step"><b>02 · Question</b><span>प्रश्न पूछें</span></div>
-        <div class="step"><b>03 · Investigate</b><span>जाँच करें</span></div>
-        <div class="step"><b>04 · Compare</b><span>तुलना करें</span></div>
-        <div class="step"><b>05 · Discover</b><span>खोजें और समझें</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="content" id="about">
-  <div class="wrap">
-    <div class="cta">
-      <span class="kicker">Our promise</span>
-      <h2>रटने से आगे, समझने की ओर</h2>
-      <p>हमारा उद्देश्य है कि हर विद्यार्थी सरल भाषा में सीखे, प्रश्न पूछने का साहस करे और प्रमाण के आधार पर सोचने की आदत विकसित करे।</p>
-      <p>Our aim is to make learning clear, thoughtful, evidence-aware and accessible.</p>
-      <a class="btn primary" href="class-6/">कक्षा 6 की पढ़ाई शुरू करें / Start Learning ↗</a>
-    </div>
-  </div>
-</section>
+<section><div class="wrap">
+<h2>Choose your class / अपनी कक्षा चुनें</h2>
+<p class="muted">Classes 6–12 · कक्षा 6–12</p>
+<div class="grid" id="classes"></div>
+<div class="notice"><b>Curriculum note:</b> पाठ्यक्रम की पुष्टि संबंधित शैक्षणिक सत्र के आधिकारिक NCERT, CBSE और UP Board दस्तावेज़ों से करनी होगी। बोर्ड के अनुसार विषय और अध्याय अलग हो सकते हैं।</div>
+</div></section>
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <div><strong>Kavya Educational Clinic &amp; Hub</strong><br><span>✦ Ocean of Knowledge ✦</span></div>
-    <div>Learn deeply. Understand clearly.<br>गहराई से सीखें · स्पष्टता से समझें</div>
-    <div><a href="#home">Back to top ↑</a></div>
-  </div>
-  <div class="wrap" style="margin-top:20px;font-size:.8rem">
-    © 2026 Kavya Educational Clinic &amp; Hub. Learning resources are being developed progressively.
-  </div>
-</footer>
+<main id="learnPage" class="hidden"><section><div class="wrap">
+<button class="btn dark" onclick="home()">← Home / मुख्य पृष्ठ</button>
+<h2 style="margin-top:20px" id="learnTitle">Learning Library / अध्ययन कक्ष</h2>
+<p class="muted">Select a class, board and subject.</p>
+<div class="toolbar">
+<select id="board"><option>NCERT</option><option>CBSE</option><option>UP Board</option></select>
+<select id="classSelect"></select>
+<input id="search" placeholder="Search subject / विषय खोजें">
+</div>
+<div class="notice" id="boardNote">चुने गए बोर्ड के नवीनतम आधिकारिक पाठ्यक्रम से अध्यायों का मिलान करें।</div>
+<div class="subjectGrid" id="subjects"></div>
+<div id="lesson" class="hidden"></div>
+</div></section></main>
+
+<main id="progressPage" class="hidden"><section><div class="wrap">
+<h2>Learning Progress / सीखने की प्रगति</h2>
+<p>प्रगति इसी ब्राउज़र और डिवाइस पर सेव होती है। यह क्लाउड अकाउंट नहीं है।</p>
+<div class="panel"><h3 id="progressCount">0 lessons completed</h3><div id="progressList" class="muted">अभी कोई पाठ पूरा नहीं किया गया।</div><button class="btn dark" onclick="learn()">Continue learning →</button><button class="btn" onclick="resetProgress()">Reset progress</button></div>
+</div></section></main>
+
+<footer><div class="wrap"><strong>Kavya Educational Clinic & Hub</strong><p>Ocean of Knowledge</p><p>गहराई से सीखें · स्पष्टता से समझें</p><small>Educational resource. परीक्षा के लिए हमेशा संबंधित बोर्ड का वर्तमान आधिकारिक पाठ्यक्रम देखें।</small></div></footer>
+
+<script>
+const subjects={
+6:[["Mathematics","गणित","🔢"],["Science","विज्ञान","🔬"],["Social Science","सामाजिक विज्ञान","🌍"],["English","अंग्रेज़ी","🔤"],["Hindi","हिंदी","📖"],["Computer","कंप्यूटर","💻"]],
+7:[["Mathematics","गणित","🔢"],["Science","विज्ञान","🔬"],["Social Science","सामाजिक विज्ञान","🌍"],["English","अंग्रेज़ी","🔤"],["Hindi","हिंदी","📖"],["Computer","कंप्यूटर","💻"]],
+8:[["Mathematics","गणित","🔢"],["Science","विज्ञान","🔬"],["Social Science","सामाजिक विज्ञान","🌍"],["English","अंग्रेज़ी","🔤"],["Hindi","हिंदी","📖"],["Computer","कंप्यूटर","💻"]],
+9:[["Mathematics","गणित","🔢"],["Science","विज्ञान","🔬"],["Social Science","सामाजिक विज्ञान","🌍"],["English","अंग्रेज़ी","🔤"],["Hindi","हिंदी","📖"]],
+10:[["Mathematics","गणित","🔢"],["Science","विज्ञान","🔬"],["Social Science","सामाजिक विज्ञान","🌍"],["English","अंग्रेज़ी","🔤"],["Hindi","हिंदी","📖"]],
+11:[["Physics","भौतिक विज्ञान","⚛️"],["Chemistry","रसायन विज्ञान","🧪"],["Biology","जीव विज्ञान","🧬"],["Mathematics","गणित","🔢"],["Accountancy","लेखाशास्त्र","📊"],["Business Studies","व्यवसाय अध्ययन","🏢"],["Economics","अर्थशास्त्र","📈"],["History","इतिहास","🏛️"],["Political Science","राजनीति विज्ञान","⚖️"],["Geography","भूगोल","🌏"],["English","अंग्रेज़ी","🔤"],["Hindi","हिंदी","📖"]],
+12:[["Physics","भौतिक विज्ञान","⚛️"],["Chemistry","रसायन विज्ञान","🧪"],["Biology","जीव विज्ञान","🧬"],["Mathematics","गणित","🔢"],["Accountancy","लेखाशास्त्र","📊"],["Business Studies","व्यवसाय अध्ययन","🏢"],["Economics","अर्थशास्त्र","📈"],["History","इतिहास","🏛️"],["Political Science","राजनीति विज्ञान","⚖️"],["Geography","भूगोल","🌏"],["English","अंग्रेज़ी","🔤"],["Hindi","हिंदी","📖"]]
+};
+
+const math=[
+{title:"गणित में पैटर्न / Patterns in Mathematics",need:"गिनती, संख्या-क्रम और दोहराव पहचानना। / Counting, number order and repetition.",intro:"पैटर्न में कोई नियम दोहरता है या बदलाव एक निश्चित तरीके से होता है। / A pattern follows a repeating or changing rule.",parts:[["रंगों का पैटर्न / Colour pattern","🔵 🟡 🔵 🟡 🔵 __","अगला रंग पीला है, क्योंकि नीला और पीला बारी-बारी से आते हैं। / Yellow comes next because blue and yellow alternate."],["संख्या-पैटर्न / Number pattern","3, 6, 9, 12, __","हर बार 3 जोड़ें। अगली संख्या 15 है। / Add 3 each time. Next is 15."],["वर्ग संख्याएँ / Square numbers","1, 4, 9, 16, __","ये 1×1, 2×2, 3×3, 4×4 हैं। अगली संख्या 5×5 = 25 है। / Next is 5×5 = 25."]],quiz:[["2, 4, 6, 8, __ में अगली संख्या? / What comes next?",["9","10","12"],1,"हर बार 2 जोड़ते हैं। / Add 2 each time."],["अगली वर्ग संख्या क्या है? 1, 4, 9, 16, __",["20","24","25"],2,"5 × 5 = 25। / 5 × 5 = 25."]]},
+{title:"रेखाएँ और कोण / Lines and Angles",need:"बिंदु, सीधी दिशा और आकृतियों को पहचानना। / Recognising points, straight paths and shapes.",intro:"रेखाखंड के दो अंत-बिंदु होते हैं। रेखा दोनों दिशाओं में बढ़ती है। किरण का एक आरंभ-बिंदु होता है। / A segment has two endpoints, a line extends both ways, and a ray has one endpoint.",parts:[["रेखाखंड / Line segment","A •────• B","रेखाखंड सीमित होता है। / A line segment has two endpoints."],["कोण / Angle","∠","दो किरणें एक ही बिंदु से निकलें तो कोण बनता है। साझा बिंदु शीर्ष (vertex) है। / Two rays with a common endpoint form an angle."],["कोण का माप / Angle measure","90° = समकोण / right angle","भुजाएँ लंबी करने से कोण का माप अपने-आप नहीं बढ़ता। / Making the arms longer does not automatically change the angle."]],quiz:[["दो अंत-बिंदुओं वाला सीधा भाग क्या है?",["रेखा / Line","रेखाखंड / Segment","किरण / Ray"],1,"रेखाखंड के दो अंत-बिंदु होते हैं। / A segment has two endpoints."],["कोण की भुजाएँ लंबी करने से माप अपने-आप बदलता है?",["हाँ / Yes","नहीं / No","हमेशा दोगुना / Doubles"],1,"कोण का माप घुमाव पर निर्भर है, लंबाई पर नहीं। / Angle measure depends on the turn, not length."]]},
+{title:"संख्याओं का खेल / Number Play",need:"स्थान-मूल्य, जोड़, घटाव और गुणा। / Place value and basic operations.",intro:"संख्याओं को अलग-अलग रूपों में लिखना और उनके संबंध पहचानना सीखें। / Learn to represent numbers in different ways and find relationships.",parts:[["स्थान-मूल्य / Place value","245 = 200 + 40 + 5","245 में 2 सैकड़े, 4 दहाइयाँ और 5 इकाइयाँ हैं। / 245 has 2 hundreds, 4 tens and 5 ones."]],quiz:[["308 में 3 का स्थान-मूल्य?",["3","30","300"],2,"3 सैकड़ों के स्थान पर है, इसलिए उसका मूल्य 300 है।"]]},
+{title:"आँकड़ों का प्रबंधन / Data Handling",need:"गिनती, तुलना और तालिका पढ़ना। / Counting, comparing and reading tables.",intro:"आँकड़े जानकारी हैं जिन्हें तालिका या चित्र से व्यवस्थित किया जा सकता है। / Data is information organised in tables or diagrams.",parts:[["तुलना / Compare","सेब 5, आम 3, केले 4","सबसे अधिक सेब हैं। / Apples are the most numerous."]],quiz:[["5, 3, 4 में सबसे बड़ी संख्या?",["3","4","5"],2,"5 सबसे बड़ी संख्या है। / 5 is greatest."]]},
+{title:"अभाज्य समय / Prime Time",need:"गुणा, भाग और गुणनखंड। / Multiplication, division and factors.",intro:"अभाज्य संख्या 1 से बड़ी वह पूर्ण संख्या है जिसके केवल दो धनात्मक गुणनखंड हों। / A prime number greater than 1 has exactly two positive factors.",parts:[["अभाज्य संख्या / Prime number","7 के गुणनखंड: 1, 7","7 अभाज्य है; 8 भाज्य है क्योंकि उसके 1, 2, 4 और 8 गुणनखंड हैं। / 7 is prime; 8 is composite."]],quiz:[["कौन-सी संख्या अभाज्य है?",["9","11","15"],1,"11 के केवल दो धनात्मक गुणनखंड हैं: 1 और 11।"]]},
+{title:"परिमाप और क्षेत्रफल / Perimeter and Area",need:"लंबाई, जोड़, गुणा और इकाइयाँ। / Length, addition, multiplication and units.",intro:"परिमाप सीमा की कुल लंबाई है; क्षेत्रफल भीतर की सतह का माप है। / Perimeter measures boundary length; area measures the surface inside.",parts:[["परिमाप / Perimeter","आयत 5 cm × 3 cm: P = 16 cm","परिमाप = 2 × (लंबाई + चौड़ाई)। / P = 2 × (length + width)."],["क्षेत्रफल / Area","5 × 3 = 15 cm²","क्षेत्रफल = लंबाई × चौड़ाई। / Area = length × width."]],quiz:[["4 cm × 2 cm आयत का क्षेत्रफल?",["6 cm²","8 cm²","12 cm²"],1,"4 × 2 = 8 cm²।"]]},
+{title:"भिन्न / Fractions",need:"बराबर हिस्से और भाग। / Equal parts and division.",intro:"भिन्न पूरी वस्तु के बराबर हिस्सों में से लिए गए हिस्सों को दर्शाती है। / A fraction represents parts of a whole divided into equal parts.",parts:[["अंश और हर / Numerator and denominator","3/4","3 अंश है और 4 हर है। / 3 is the numerator; 4 is the denominator."]],quiz:[["3/4 में हर कौन-सा है?",["3","4","7"],1,"नीचे की संख्या हर कहलाती है। / The bottom number is the denominator."]]},
+{title:"रचनाओं के साथ खेलना / Playing with Constructions",need:"रेखाखंड, कोण और आकृतियाँ। / Segments, angles and shapes.",intro:"ज्यामितीय रचनाओं में रूलर और कम्पास जैसे उपकरणों का उपयोग किया जाता है। / Geometric constructions use tools such as rulers and compasses.",parts:[["उपकरण / Tools","रूलर और कम्पास / Ruler and compass","माप को ध्यान से पढ़ें और उपकरणों का सही उपयोग करें। / Read measurements carefully and use tools correctly."]],quiz:[["वृत्त बनाने के लिए कौन-सा उपकरण उपयोगी है?",["कम्पास","थर्मामीटर","घड़ी"],0,"कम्पास से वृत्त और चाप बनाए जा सकते हैं।"]]},
+{title:"सममिति / Symmetry",need:"आकृतियों और हिस्सों को पहचानना। / Recognising shapes and matching parts.",intro:"जब किसी आकृति के दो भाग प्रतिबिंब की तरह मिलते हैं, तो उसमें सममिति हो सकती है। / A shape has symmetry when its parts match like mirror images.",parts:[["सममिति रेखा / Line of symmetry","♥","सममिति रेखा आकृति को दो मिलते-जुलते हिस्सों में बाँटती है। / It divides a shape into matching parts."]],quiz:[["सममिति रेखा आकृति को कैसे बाँटती है?",["दो मिलते भागों में","तीन असमान भागों में","किसी भी तरह"],0,"दोनों ओर के भाग प्रतिबिंब की तरह मिलते हैं।"]]},
+{title:"शून्य के दूसरी ओर / The Other Side of Zero",need:"संख्या-रेखा और शून्य। / Number line and zero.",intro:"शून्य से छोटी संख्याएँ ऋणात्मक होती हैं। / Numbers smaller than zero are negative.",parts:[["धनात्मक और ऋणात्मक / Positive and negative","−3 < 0 < 2","संख्या-रेखा पर बाईं ओर की संख्या छोटी होती है। / A number to the left is smaller."]],quiz:[["−3 और 1 में कौन छोटी है?",["−3","1","दोनों बराबर"],0,"−3 संख्या-रेखा पर 1 के बाईं ओर है।"]]}
+];
+
+const science=[
+{title:"जीव-जगत / The Living World",need:"जीवित चीजों का अवलोकन। / Observing living things.",intro:"जीवों को समझने के लिए उनके गुणों, वृद्धि और पर्यावरण से संबंध का अवलोकन करते हैं। / We observe features, growth and environment of living things.",parts:[["अवलोकन / Observation","पौधे, पक्षी, कीट","जो वास्तव में देखते हैं, उसे अनुमान से अलग लिखें। / Separate observations from guesses."]],quiz:[["अवलोकन क्या है?",["ध्यान से देखकर जानकारी जुटाना","बिना जाँचे मान लेना","केवल याद करना"],0,"अवलोकन में ध्यान से देखना और जानकारी दर्ज करना शामिल है।"]]},
+{title:"भोजन और पोषण / Food and Nutrition",need:"भोजन के स्रोत पहचानना। / Recognising food sources.",intro:"भोजन ऊर्जा देता है और वृद्धि तथा शरीर के कार्यों में मदद करता है। / Food supplies energy and supports growth and body functions.",parts:[["संतुलित भोजन / Balanced diet","अनाज, दालें, सब्जियाँ, फल","विविध खाद्य पदार्थ अलग-अलग पोषक तत्व देते हैं। / Different foods provide different nutrients."]],quiz:[["भोजन का एक प्रमुख काम?",["ऊर्जा देना","गुरुत्वाकर्षण रोकना","समय बदलना"],0,"भोजन ऊर्जा देता है। / Food provides energy."]]},
+{title:"पदार्थ और सामग्री / Materials",need:"वस्तुओं के गुणों की तुलना। / Comparing properties of objects.",intro:"वस्तुओं को कठोरता, लचीलापन और पारदर्शिता जैसे गुणों से समूहों में रखा जा सकता है। / Objects can be grouped by hardness, flexibility and transparency.",parts:[["वर्गीकरण / Classification","लकड़ी, काँच, धातु, कपड़ा","गुणों की तुलना समानताएँ और अंतर पहचानने में मदद करती है। / Comparing properties reveals similarities and differences."]],quiz:[["वर्गीकरण का अच्छा आधार?",["देखा जा सकने वाला गुण","केवल नाम","किसने खरीदा"],0,"देखे जा सकने वाले गुणों से तुलना की जा सकती है।"]]}
+];
+
+let cls=6,subject="Mathematics",chapter=0;
+let progress=JSON.parse(localStorage.getItem("kecahProgress")||'{"completed":[],"attempts":0,"best":null}');
+function save(){localStorage.setItem("kecahProgress",JSON.stringify(progress))}
+function home(){hideAll();document.getElementById("homePage").classList.remove("hidden");window.scrollTo(0,0)}
+function learn(){hideAll();document.getElementById("learnPage").classList.remove("hidden");renderSubjects();window.scrollTo(0,0)}
+function showProgress(){hideAll();document.getElementById("progressPage").classList.remove("hidden");renderProgress();window.scrollTo(0,0)}
+function hideAll(){["homePage","learnPage","progressPage"].forEach(id=>document.getElementById(id).classList.add("hidden"))}
+function init(){
+document.getElementById("classes").innerHTML=[6,7,8,9,10,11,12].map(n=>`<article class="card"><div class="classnum">${n}</div><h3>Class ${n} / कक्षा ${n}</h3><p>${n<9?"Build strong foundations / मजबूत नींव":"Explore subjects deeply / विषयों को गहराई से समझें"}</p><button class="btn dark" onclick="pickClass(${n})">Explore →</button></article>`).join("");
+document.getElementById("classSelect").innerHTML=[6,7,8,9,10,11,12].map(n=>`<option value="${n}">Class ${n} / कक्षा ${n}</option>`).join("");
+document.getElementById("classSelect").addEventListener("change",e=>{cls=+e.target.value;document.getElementById("lesson").classList.add("hidden");renderSubjects()});
+document.getElementById("search").addEventListener("input",renderSubjects);
+document.getElementById("board").addEventListener("change",()=>{let b=document.getElementById("board").value;document.getElementById("boardNote").textContent="Selected: "+b+". हर अध्याय को इस बोर्ड के वर्तमान आधिकारिक पाठ्यक्रम से सत्यापित करें।"});
+}
+function pickClass(n){cls=n;document.getElementById("classSelect").value=n;learn()}
+function renderSubjects(){
+let q=document.getElementById("search").value.toLowerCase();
+document.getElementById("learnTitle").textContent="Class "+cls+" / कक्षा "+cls;
+document.getElementById("subjects").innerHTML=(subjects[cls]||[]).filter(s=>s.join(" ").toLowerCase().includes(q)).map(s=>`<button class="subject" onclick="openSubject('${s[0]}')"><span style="font-size:1.6rem">${s[2]}</span><b>${s[0]}</b><span class="muted">${s[1]}</span></button>`).join("");
+}
+function getLessons(){return cls===6&&subject==="Mathematics"?math:cls===6&&subject==="Science"?science:[]}
+function openSubject(s){
+subject=s;chapter=0;let lessons=getLessons(),el=document.getElementById("lesson");el.classList.remove("hidden");
+if(!lessons.length){el.innerHTML=`<div class="panel" style="margin-top:20px"><h2>${s}</h2><p>इस विषय की पूरी सामग्री बनाने से पहले चुने गए बोर्ड और वर्तमान शैक्षणिक सत्र के आधिकारिक पाठ्यक्रम का अध्यायवार मिलान आवश्यक है।</p><div class="notice">इस विषय का नेविगेशन उपलब्ध है; यहाँ अभी पूर्ण पाठ्य सामग्री उपलब्ध नहीं है।</div></div>`;el.scrollIntoView({behavior:"smooth"});return}
+renderLesson();el.scrollIntoView({behavior:"smooth"});
+}
+function renderLesson(){
+let lessons=getLessons(),c=lessons[chapter],el=document.getElementById("lesson");
+el.innerHTML=`<div class="chapterLayout"><aside class="panel"><h3>Chapters / अध्याय</h3><div class="chapterList">${lessons.map((x,i)=>`<button class="chapterBtn ${i===chapter?"active":""}" onclick="chapter=${i};renderLesson()">${i+1}. ${x.title}</button>`).join("")}</div></aside><article class="panel"><span class="pill">Class ${cls} · ${subject}</span><h2 style="margin-top:12px">${c.title}</h2><div class="notice"><b>Prerequisite / पूर्वज्ञान:</b><br>${c.need}</div><h3>Learning goal / सीखने का लक्ष्य</h3><p>${c.intro}</p><h3>Learn step by step / चरणबद्ध सीखें</h3>${c.parts.map(p=>`<div class="concept"><h4>${p[0]}</h4><div class="example">${p[1]}</div><p>${p[2]}</p></div>`).join("")}<h3>Foundation check / बुनियादी जाँच</h3><p>पहले खुद प्रयास करें। कठिनाई हो तो व्याख्या दोबारा पढ़ें। / Try first; revisit the explanation if needed.</p>${c.quiz.map((q,i)=>`<div class="question"><p>${i+1}. ${q[0]}</p>${q[1].map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join("")}<div id="fb${i}" class="feedback"></div></div>`).join("")}<div class="actions"><button class="btn gold" onclick="checkQuiz()">Check answers / उत्तर जाँचें</button><button class="btn dark" onclick="completeLesson()">Mark complete / पाठ पूरा करें ✓</button></div><div class="track"><div class="fill" id="fill"></div></div><p id="result" aria-live="polite"></p><p class="muted"><small>यह शुरुआती शिक्षण सामग्री है। इसे पूर्ण पाठ्यक्रम मानने से पहले वर्तमान आधिकारिक पुस्तक से अध्यायवार मिलान करें।</small></p></article></div>`;
+}
+function checkQuiz(){
+let c=getLessons()[chapter],score=0,answered=0;
+c.quiz.forEach((q,i)=>{let selected=document.querySelector(`input[name="q${i}"]:checked`),fb=document.getElementById("fb"+i);fb.className="feedback show";if(!selected){fb.classList.add("incorrect");fb.textContent="पहले उत्तर चुनें। / Choose an answer.";return}answered++;if(+selected.value===q[2]){score++;fb.classList.add("correct");fb.textContent="सही उत्तर! / Correct! "+q[3]}else{fb.classList.add("incorrect");fb.textContent="फिर से समझें / Review: "+q[3]}});
+if(answered){progress.attempts++;let pct=Math.round(score/c.quiz.length*100);progress.best=progress.best===null?pct:Math.max(progress.best,pct);save();document.getElementById("fill").style.width=pct+"%";document.getElementById("result").textContent="Score / अंक: "+score+"/"+c.quiz.length+" ("+pct+"%). व्याख्या पढ़ें और फिर कोशिश करें।";renderProgress()}
+}
+function completeLesson(){let key="Class "+cls+" | "+subject+" | "+getLessons()[chapter].title;if(!progress.completed.includes(key))progress.completed.push(key);save();renderProgress();alert("पाठ पूरा चिह्नित हुआ / Lesson marked complete")}
+function renderProgress(){document.getElementById("progressCount").textContent=progress.completed.length+" lessons completed / पाठ पूरे";document.getElementById("progressList").innerHTML=progress.completed.length?progress.completed.map(x=>"<p>✓ "+x+"</p>").join(""):"अभी कोई पाठ पूरा नहीं किया गया।";if(progress.best!==null)document.getElementById("progressCount").textContent+=" · Best quiz score: "+progress.best+"%"}
+function resetProgress(){if(confirm("क्या सेव की गई स्थानीय प्रगति रीसेट करें?")){progress={completed:[],attempts:0,best:null};save();renderProgress()}}
+init();
+</script>
 </body>
 </html>
