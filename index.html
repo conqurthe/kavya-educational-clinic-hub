@@ -2,455 +2,357 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071d33">
-  <meta name="description" content="Kavya Educational Clinic & Hub — Ocean of Knowledge. हिंदी और अंग्रेज़ी में गुणवत्तापूर्ण शिक्षा।">
-  <title>Kavya Educational Clinic & Hub — Ocean of Knowledge</title>
-
-  <style>
-    :root {
-      --navy: #071d33;
-      --blue: #123f61;
-      --gold: #f1c875;
-      --cream: #fffaf0;
-      --text: #eaf2f8;
-      --muted: #c3d3e1;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--navy);
-      color: var(--text);
-      font-family: system-ui, -apple-system, "Noto Sans Devanagari",
-        "Nirmala UI", sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .topbar {
-      padding: 12px 6%;
-      text-align: center;
-      background: #041321;
-      color: var(--gold);
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-    }
-
-    header {
-      padding: 24px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #ffffff20;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 18px;
-      color: var(--gold);
-      font-size: 1.6rem;
-      background: #ffffff08;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: clamp(1.15rem, 3vw, 1.8rem);
-      line-height: 1.35;
-    }
-
-    .brand p {
-      margin: 4px 0 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--gold);
-    }
-
-    main {
-      width: min(1120px, 88%);
-      margin: auto;
-    }
-
-    .hero {
-      padding: 76px 0 58px;
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      align-items: center;
-      gap: 44px;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-
-    .hero h2 {
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 1.18;
-      margin: 14px 0 22px;
-    }
-
-    .hero h2 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 680px;
-    }
-
-    .hero-art {
-      min-height: 280px;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      border: 1px solid #f1c87550;
-      border-radius: 48% 48% 24px 24px;
-      background:
-        radial-gradient(circle at 50% 35%, #f1c87525, transparent 58%),
-        #ffffff06;
-      padding: 25px;
-    }
-
-    .hero-art .symbol {
-      font-size: 5rem;
-      color: var(--gold);
-      line-height: 1.3;
-    }
-
-    .hero-art strong {
-      display: block;
-      font-size: 1.3rem;
-    }
-
-    .hero-art p {
-      font-size: 0.95rem;
-      margin-bottom: 0;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 11px 19px;
-      border: 1px solid var(--gold);
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .button.primary {
-      background: var(--gold);
-      color: var(--navy);
-    }
-
-    .button.secondary {
-      color: var(--gold);
-    }
-
-    .section {
-      padding: 48px 0;
-    }
-
-    .section-heading {
-      margin-bottom: 24px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-      margin: 0 0 8px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      padding: 24px;
-      border: 1px solid #ffffff20;
-      border-radius: 16px;
-      background: #ffffff08;
-    }
-
-    .card .icon {
-      font-size: 2rem;
-    }
-
-    .card h3 {
-      margin: 10px 0 8px;
-      color: var(--gold);
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .notice {
-      margin: 24px 0;
-      padding: 20px;
-      border-left: 3px solid var(--gold);
-      background: #ffffff08;
-      border-radius: 0 12px 12px 0;
-    }
-
-    footer {
-      margin-top: 45px;
-      padding: 30px 6%;
-      border-top: 1px solid #ffffff20;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    footer strong {
-      color: var(--gold);
-    }
-
-    @media (max-width: 760px) {
-      header {
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        width: 100%;
-        gap: 12px 18px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 45px;
-        gap: 28px;
-      }
-
-      .hero-art {
-        min-height: 220px;
-      }
-
-      .hero-art .symbol {
-        font-size: 3.8rem;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 32px 0;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08152d">
+<meta name="description" content="Kavya Educational Clinic & Hub — Learn deeply, understand clearly. Bilingual learning for Classes 6–12 and competitive examinations.">
+<title>Kavya Educational Clinic & Hub | Ocean of Knowledge</title>
+<style>
+:root {
+  --bg:#08152d;
+  --bg2:#102747;
+  --gold:#f5cb78;
+  --cyan:#83e5ee;
+  --white:#f8fbff;
+  --muted:#b9c9dd;
+  --glass:rgba(255,255,255,.075);
+  --border:rgba(255,255,255,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;
+  line-height:1.7;overflow-x:hidden
+}
+a{color:inherit}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(8,21,45,.91);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border)
+}
+.nav{
+  width:min(1180px,94%);margin:auto;min-height:76px;
+  display:flex;align-items:center;justify-content:space-between;gap:15px
+}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo{
+  width:48px;height:48px;border-radius:15px;
+  display:grid;place-items:center;font-size:25px;
+  color:var(--bg);font-weight:900;
+  background:linear-gradient(135deg,var(--gold),#fff0bf);
+  box-shadow:0 0 25px #f5cb7830;
+  animation:float 4s ease-in-out infinite
+}
+.brand strong{display:block;font-size:1rem;line-height:1.35}
+.brand small{color:var(--gold);font-size:.78rem}
+.links{display:flex;gap:19px;align-items:center}
+.links a{text-decoration:none;color:var(--muted);font-size:.92rem}
+.links a:hover{color:var(--gold)}
+.menu{display:none}
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:86px 0 78px;
+  background:
+    radial-gradient(ellipse at 80% 15%,#246b8780,transparent 38%),
+    radial-gradient(ellipse at 15% 75%,#7150a34a,transparent 40%),
+    linear-gradient(145deg,#08152d,#102747 65%,#10213a)
+}
+.hero:before,.hero:after{
+  content:"";position:absolute;z-index:-1;border-radius:50%;
+  border:1px solid #83e5ee26;pointer-events:none
+}
+.hero:before{width:360px;height:360px;right:-110px;top:40px}
+.hero:after{width:230px;height:230px;right:-45px;top:105px}
+.wrap{width:min(1120px,92%);margin:auto}
+.hero-grid{
+  display:grid;grid-template-columns:1.2fr .8fr;
+  align-items:center;gap:45px
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid #f5cb7855;border-radius:50px;
+  padding:7px 14px;color:var(--gold);font-size:.88rem;
+  background:#f5cb7810
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);
+  box-shadow:0 0 12px var(--cyan)}
+h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.12;
+  letter-spacing:-1.5px;margin:22px 0}
+.gradient{
+  background:linear-gradient(100deg,#fff,var(--gold),var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.hero p{color:var(--muted);font-size:1.06rem;max-width:650px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:27px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 19px;border-radius:12px;text-decoration:none;
+  font-weight:750;transition:transform .2s,box-shadow .2s
+}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:linear-gradient(120deg,var(--gold),#ffe8ad);
+  color:#14233a;box-shadow:0 8px 25px #f5cb7823}
+.secondary{border:1px solid var(--border);background:var(--glass)}
+.orbit{
+  min-height:310px;display:grid;place-items:center;position:relative
+}
+.planet{
+  width:210px;height:210px;border-radius:50%;
+  display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 30% 25%,#416c91,#172d50 58%,#08152d);
+  border:1px solid #83e5ee7a;
+  box-shadow:0 0 65px #83e5ee22,inset 0 0 40px #83e5ee12;
+  animation:float 5s ease-in-out infinite
+}
+.planet .symbol{font-size:3.7rem;display:block}
+.planet strong{color:var(--gold);font-size:1.15rem}
+.ring{
+  position:absolute;width:285px;height:285px;border-radius:50%;
+  border:1px dashed #83e5ee70;animation:spin 25s linear infinite
+}
+.ring:before{
+  content:"✦";position:absolute;top:20px;left:35px;
+  color:var(--gold);font-size:25px
+}
+.ring:after{
+  content:"✧";position:absolute;bottom:15px;right:30px;
+  color:var(--cyan);font-size:30px
+}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:13px;
+  margin-top:48px
+}
+.stat{
+  padding:17px;border:1px solid var(--border);
+  background:var(--glass);border-radius:15px;text-align:center
+}
+.stat strong{display:block;color:var(--gold);font-size:1.2rem}
+.stat span{color:var(--muted);font-size:.86rem}
+section.content{padding:70px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 35px}
+.kicker{text-transform:uppercase;letter-spacing:2px;color:var(--cyan);
+  font-size:.77rem;font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.25;margin:10px 0 14px}
+.section-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  position:relative;overflow:hidden;padding:24px;border-radius:18px;
+  border:1px solid var(--border);
+  background:linear-gradient(145deg,#ffffff0c,#ffffff03);
+  transition:transform .25s,border-color .25s,background .25s
+}
+.card:hover{transform:translateY(-6px);border-color:#f5cb7870;
+  background:linear-gradient(145deg,#f5cb7812,#83e5ee08)}
+.icon{
+  width:54px;height:54px;display:grid;place-items:center;
+  font-size:27px;border-radius:15px;background:#83e5ee12;
+  border:1px solid #83e5ee2b;margin-bottom:17px
+}
+.card h3{margin:0 0 8px;font-size:1.2rem}
+.card p{color:var(--muted);font-size:.94rem}
+.card a{display:inline-block;margin-top:7px;color:var(--gold);
+  font-weight:750;text-decoration:none}
+.card a:hover{text-decoration:underline}
+.streams{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:25px}
+.pill{border:1px solid var(--border);border-radius:30px;
+  padding:8px 14px;background:var(--glass);color:var(--muted);font-size:.9rem}
+.deep{
+  border:1px solid #83e5ee35;border-radius:22px;padding:32px;
+  background:radial-gradient(ellipse at 100% 0%,#83e5ee16,transparent 45%),var(--glass)
+}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:25px}
+.step{padding:15px;border-radius:13px;background:#ffffff08;border:1px solid var(--border)}
+.step b{display:block;color:var(--gold);font-size:1.05rem}
+.step span{font-size:.86rem;color:var(--muted)}
+.cta{
+  text-align:center;padding:40px 24px;border-radius:22px;
+  border:1px solid #f5cb7845;
+  background:radial-gradient(ellipse at 50% 0%,#f5cb781b,transparent 70%),#ffffff05
+}
+footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted)}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--gold);text-decoration:none}
+.reveal{animation:rise .8s both}
+.delay{animation-delay:.15s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:820px){
+ .links{display:none}
+ .menu{display:inline-block;color:var(--gold);text-decoration:none;border:1px solid var(--border);
+   padding:8px 11px;border-radius:9px}
+ .hero{padding:58px 0}
+ .hero-grid{grid-template-columns:1fr;gap:10px}
+ .orbit{min-height:280px}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+ .brand strong{font-size:.85rem}
+ .brand small{font-size:.7rem}
+ .logo{width:42px;height:42px}
+ h1{letter-spacing:-.7px}
+ .cards{grid-template-columns:1fr}
+ .stats{gap:8px}
+ .stat{padding:12px 5px}
+ .stat strong{font-size:1rem}
+ .stat span{font-size:.75rem}
+ .deep{padding:22px 16px}
+ .steps{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+}
+</style>
 </head>
-
 <body>
-  <div class="topbar">
-    ✦ A space for curious minds · जिज्ञासु मन के लिए एक स्थान ✦
+<header>
+  <div class="nav">
+    <a class="brand" href="#home" aria-label="Kavya Educational Clinic & Hub Home">
+      <span class="logo">K</span>
+      <span><strong>Kavya Educational Clinic &amp; Hub</strong><small>✦ Ocean of Knowledge ✦</small></span>
+    </a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#classes">Classes</a>
+      <a href="#learning">Learning</a>
+      <a href="#deep-dive">Deep Dive</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="menu" href="#classes">Explore ↓</a>
   </div>
+</header>
 
-  <header>
-    <div class="brand">
-      <div class="logo" aria-hidden="true">✧</div>
-      <div>
-        <h1>Kavya Educational Clinic &amp; Hub</h1>
-        <p>Ocean of Knowledge · ज्ञान का महासागर</p>
+<main id="home">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="eyebrow"><span class="dot"></span> A space for curious minds</span>
+        <h1><span class="gradient">Learn deeply.</span><br>Understand clearly.</h1>
+        <p>ज्ञान केवल याद करने का नाम नहीं। प्रश्न पूछने, प्रमाण खोजने, विचार करने और दुनिया को बेहतर समझने की यात्रा है।</p>
+        <p>Learning is more than memorising. It is a journey of asking questions, examining evidence and discovering meaning.</p>
+        <div class="actions">
+          <a class="btn primary" href="#classes">अपनी कक्षा चुनें / Explore Classes ↗</a>
+          <a class="btn secondary" href="#deep-dive">Discover Deep Dive ✦</a>
+        </div>
+      </div>
+      <div class="orbit reveal delay" aria-label="Ocean of Knowledge animated emblem">
+        <div class="ring"></div>
+        <div class="planet">
+          <div><span class="symbol">✧</span><strong>ज्ञान का महासागर</strong><br><small>Ocean of Knowledge</small></div>
+        </div>
       </div>
     </div>
+    <div class="stats">
+      <div class="stat"><strong>Classes 6–12</strong><span>विद्यालयी शिक्षा / School Learning</span></div>
+      <div class="stat"><strong>Hindi + English</strong><span>द्विभाषी अध्ययन / Bilingual Learning</span></div>
+      <div class="stat"><strong>Learn • Explore</strong><span>समझें • खोजें / Understand • Discover</span></div>
+    </div>
+  </div>
+</section>
 
-    <nav class="nav-links" aria-label="मुख्य नेविगेशन">
-      <a href="#home">होम</a>
-      <a href="#classes">कक्षाएँ</a>
-      <a href="#features">विशेषताएँ</a>
-      <a href="#about">परिचय</a>
-    </nav>
-  </header>
+<section class="content" id="classes">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Your learning journey</span>
+      <h2>अपनी सीखने की दुनिया चुनें</h2>
+      <h2 lang="en">Choose Your Learning Path</h2>
+      <p>कक्षा, विषय और अपनी रुचि के अनुसार आगे बढ़ें। विस्तृत पाठ्यक्रम चरणबद्ध रूप से जोड़ा जाएगा।</p>
+      <p>Explore by class, subject and interest. Detailed learning resources will be added systematically.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="icon">📘</div>
+        <h3>कक्षा 6–8 / Middle School</h3>
+        <p>मूल अवधारणाएँ, जिज्ञासा, उदाहरण और मजबूत शैक्षिक आधार।</p>
+        <p>Build strong foundations through concepts, examples and curiosity.</p>
+        <a href="class-6/">कक्षा 6 खोलें / Explore Class 6 →</a>
+      </article>
+      <article class="card">
+        <div class="icon">🧭</div>
+        <h3>कक्षा 9–10 / Secondary</h3>
+        <p>विषयवार अध्ययन, अभ्यास और परीक्षा की तैयारी।</p>
+        <p>Subject learning, practice and exam preparation.</p>
+        <a href="#learning">अध्ययन सुविधाएँ / Learning features →</a>
+      </article>
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h3>कक्षा 11–12 / Senior Secondary</h3>
+        <p>विज्ञान, वाणिज्य और मानविकी की स्ट्रीम के लिए योजना।</p>
+        <p>Planned learning paths for Science, Commerce and Humanities.</p>
+        <a href="#learning">स्ट्रीम देखें / Explore streams →</a>
+      </article>
+    </div>
+    <div class="streams">
+      <span class="pill">CBSE</span><span class="pill">UP Board</span>
+      <span class="pill">PCM</span><span class="pill">PCB</span>
+      <span class="pill">Commerce</span><span class="pill">Accountancy</span>
+      <span class="pill">Arts &amp; Humanities</span>
+    </div>
+  </div>
+</section>
 
-  <main>
-    <section class="hero" id="home">
-      <div>
-        <div class="eyebrow">Learn deeply · Understand clearly</div>
-        <h2>
-          ज्ञान की नई दुनिया में
-          <span>आपका स्वागत है।</span>
-        </h2>
+<section class="content" id="learning" style="background:#ffffff04">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Explore and understand</span>
+      <h2>सीखने के साधन / Learning Spaces</h2>
+      <p>एक ऐसी संरचना जहाँ विषयों को समझना, अभ्यास करना और अपनी सीख को दोहराना आसान हो।</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="icon">📚</div><h3>Notes &amp; Chapters</h3><p>विषयवार नोट्स, परिभाषाएँ, उदाहरण और मुख्य तथ्य।</p><a href="class-6/">कक्षा 6 से शुरू करें →</a></article>
+      <article class="card"><div class="icon">🧠</div><h3>Quiz &amp; Practice</h3><p>ज्ञान जाँचने के लिए अभ्यास प्रश्न और उत्तरों की योजना।</p><a href="#about">हमारा उद्देश्य →</a></article>
+      <article class="card"><div class="icon">🔎</div><h3>Knowledge Library</h3><p>गहन अध्ययन, प्रमाण, विचार और विषयों के बीच संबंध।</p><a href="#deep-dive">Deep Dive देखें →</a></article>
+      <article class="card"><div class="icon">🏆</div><h3>Competitive Exams</h3><p>TET, Super TET, TGT, PGT, एक-दिवसीय परीक्षाएँ और सिविल सेवा की तैयारी हेतु नियोजित सामग्री।</p><a href="#about">तैयारी की दिशा →</a></article>
+      <article class="card"><div class="icon">🌐</div><h3>Hindi + English</h3><p>दोनों भाषाओं में सरल, स्पष्ट और उपयोगी अध्ययन।</p><a href="class-6/">द्विभाषी पेज देखें →</a></article>
+      <article class="card"><div class="icon">🗓️</div><h3>Latest Information</h3><p>2026 और आगे की अद्यतन जानकारी के लिए अलग खंड की योजना।</p><a href="#about">हमारी प्रतिबद्धता →</a></article>
+    </div>
+  </div>
+</section>
 
-        <p lang="hi">
-          यहाँ सीखना केवल जानकारी याद करना नहीं, बल्कि प्रश्न पूछना,
-          प्रमाण समझना और विषयों को गहराई से जानना है।
-        </p>
-
-        <p lang="en">
-          Learning is more than memorising facts. It is about asking
-          questions, examining evidence and understanding ideas deeply.
-        </p>
-
-        <div class="actions">
-          <a class="button primary" href="#classes">अपनी कक्षा चुनें</a>
-          <a class="button secondary" href="#about">हमारे बारे में</a>
-        </div>
+<section class="content" id="deep-dive">
+  <div class="wrap">
+    <div class="deep">
+      <span class="kicker">Beyond the obvious</span>
+      <h2>Deep Dive — गहराई में उतरें</h2>
+      <p>सिर्फ उत्तर जानना नहीं—यह समझना कि उत्तर सही क्यों है, प्रमाण क्या हैं और कौन-से प्रश्न अभी बाकी हैं।</p>
+      <p>Go beyond the obvious. Investigate evidence, compare explanations and discover overlooked meanings.</p>
+      <div class="steps">
+        <div class="step"><b>01 · Observe</b><span>ध्यान से देखें</span></div>
+        <div class="step"><b>02 · Question</b><span>प्रश्न पूछें</span></div>
+        <div class="step"><b>03 · Investigate</b><span>जाँच करें</span></div>
+        <div class="step"><b>04 · Compare</b><span>तुलना करें</span></div>
+        <div class="step"><b>05 · Discover</b><span>खोजें और समझें</span></div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="hero-art">
-        <div>
-          <div class="symbol" aria-hidden="true">✧</div>
-          <strong>ज्ञान • जिज्ञासा • विकास</strong>
-          <p>Knowledge · Curiosity · Growth</p>
-        </div>
-      </div>
-    </section>
+<section class="content" id="about">
+  <div class="wrap">
+    <div class="cta">
+      <span class="kicker">Our promise</span>
+      <h2>रटने से आगे, समझने की ओर</h2>
+      <p>हमारा उद्देश्य है कि हर विद्यार्थी सरल भाषा में सीखे, प्रश्न पूछने का साहस करे और प्रमाण के आधार पर सोचने की आदत विकसित करे।</p>
+      <p>Our aim is to make learning clear, thoughtful, evidence-aware and accessible.</p>
+      <a class="btn primary" href="class-6/">कक्षा 6 की पढ़ाई शुरू करें / Start Learning ↗</a>
+    </div>
+  </div>
+</section>
+</main>
 
-    <section class="section" id="classes">
-      <div class="section-heading">
-        <h2>अपनी सीखने की यात्रा चुनें</h2>
-        <p>Choose your learning journey</p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="icon" aria-hidden="true">📘</div>
-          <h3>कक्षा 6–8</h3>
-          <p lang="hi">बुनियादी अवधारणाएँ, सरल व्याख्याएँ और अभ्यास।</p>
-          <p lang="en">Foundational concepts, clear explanations and practice.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon" aria-hidden="true">📚</div>
-          <h3>कक्षा 9–10</h3>
-          <p lang="hi">विषयों की गहरी समझ और परीक्षा की तैयारी।</p>
-          <p lang="en">Deeper subject understanding and exam preparation.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon" aria-hidden="true">🎓</div>
-          <h3>कक्षा 11–12</h3>
-          <p lang="hi">विज्ञान, वाणिज्य और कला की अध्ययन-यात्रा।</p>
-          <p lang="en">Explore Science, Commerce and Humanities.</p>
-        </article>
-      </div>
-
-      <div class="notice">
-        <strong>ध्यान दें / Note:</strong>
-        <p lang="hi">
-          यह शुरुआती होमपेज है। विस्तृत पाठ्यक्रम, नोट्स, अध्याय,
-          प्रश्नोत्तरी और अन्य सुविधाएँ चरणबद्ध तरीके से जोड़ी जाएँगी।
-        </p>
-        <p lang="en">
-          This is the initial homepage. Detailed curricula, notes,
-          chapters, quizzes and other features will be added in stages.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="features">
-      <div class="section-heading">
-        <h2>सीखने के विशेष तरीके</h2>
-        <p>Ways to learn and explore</p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="icon" aria-hidden="true">🔎</div>
-          <h3>प्रमाण-आधारित अध्ययन</h3>
-          <p lang="hi">तथ्यों, स्रोतों और तर्क के साथ सीखना।</p>
-          <p lang="en">Learn through evidence, sources and reasoning.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon" aria-hidden="true">🌐</div>
-          <h3>द्विभाषी शिक्षा</h3>
-          <p lang="hi">हिंदी और अंग्रेज़ी में स्पष्ट व्याख्याएँ।</p>
-          <p lang="en">Clear explanations in Hindi and English.</p>
-        </article>
-
-        <article class="card">
-          <div class="icon" aria-hidden="true">🧭</div>
-          <h3>प्रतियोगी परीक्षाएँ</h3>
-          <p lang="hi">आगे चलकर प्रतियोगी परीक्षाओं के लिए समर्पित अनुभाग।</p>
-          <p lang="en">A dedicated competitive-exam section will follow.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-heading">
-        <h2>हमारा उद्देश्य</h2>
-        <p>Our purpose</p>
-      </div>
-
-      <div class="notice">
-        <p lang="hi">
-          Kavya Educational Clinic &amp; Hub का उद्देश्य जिज्ञासा,
-          स्पष्ट समझ और स्वतंत्र चिंतन को प्रोत्साहित करना है।
-          हम सामग्री को व्यवस्थित, उपयोगी और सीखने वालों के अनुकूल
-          बनाने की दिशा में काम करेंगे।
-        </p>
-
-        <p lang="en">
-          Kavya Educational Clinic &amp; Hub aims to encourage curiosity,
-          clear understanding and independent thinking. We will build
-          organised, useful and learner-friendly educational resources.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <strong>Kavya Educational Clinic &amp; Hub</strong>
-    <p>Ocean of Knowledge · ज्ञान का महासागर</p>
-    <p>Learn deeply. Understand clearly.</p>
-    <p>© 2026 · शिक्षा, जिज्ञासा और ज्ञान के लिए</p>
-  </footer>
+<footer>
+  <div class="wrap foot">
+    <div><strong>Kavya Educational Clinic &amp; Hub</strong><br><span>✦ Ocean of Knowledge ✦</span></div>
+    <div>Learn deeply. Understand clearly.<br>गहराई से सीखें · स्पष्टता से समझें</div>
+    <div><a href="#home">Back to top ↑</a></div>
+  </div>
+  <div class="wrap" style="margin-top:20px;font-size:.8rem">
+    © 2026 Kavya Educational Clinic &amp; Hub. Learning resources are being developed progressively.
+  </div>
+</footer>
 </body>
 </html>
